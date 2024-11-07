@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ScannerQrCode</string>
+    <string name="tutup">tutup</string>
+    <string name="validasi_lisensi">Validasi Lisensi...</string>
+    <string name="flash">Flash</string>
+    <string name="scan_qr_code_zappele_repair">Scan QR ZappeleRepair</string>
+</resources>

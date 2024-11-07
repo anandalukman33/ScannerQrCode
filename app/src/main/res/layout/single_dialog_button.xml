@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/semitransparent"
+    android:gravity="center">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_white_bg">
+
+            <RelativeLayout
+                android:id="@+id/rl_ic_warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_blue_dark">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_info"
+                    tools:ignore="ContentDescription" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_title_warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_ic_warning"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="#414141"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                tools:text="Informasi" />
+
+            <TextView
+                android:id="@+id/txt_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_title_warning"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_vertical"
+                android:justificationMode="inter_word"
+                android:maxLines="7"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:scrollbars="vertical"
+                android:textColor="@color/ruang_belajar_base_black"
+                android:textSize="14dp"
+                tools:text="Pada halaman ini kamu dapat menghasilkan uang dengan cara claim point dari klik iklan yang sudah disediakan\niklan wajib diklik apabila lupa klik iklan terus mau claim lagi, mohon maaf harus ulang lagi episodenya dan menunggu 10 menit lagi
+\n\n
+info : sudah bisa next durasi dengan tap dua kali di layar kiri maupun kanan
+dan sudah bisa ubah volume dan ubah pencahayaan layar dengan cara usap keatas atau kebawah pada posisi layar kiri maupun kanan" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/txt_content"
+                android:gravity="center"
+                android:layout_margin="5dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ok"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/tutup"
+                    android:textStyle="normal"
+                    android:elevation="10dp"
+                    app:cornerRadius="20dp"
+                    android:textColor="#FFF"
+                    android:textSize="12dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/c_btn_cancel"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/tutup"
+                    android:visibility="gone"
+                    android:textStyle="normal"
+                    android:elevation="10dp"
+                    app:cornerRadius="20dp"
+                    android:textColor="#FFF"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>

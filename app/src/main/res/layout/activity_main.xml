@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="false"
+    tools:background="@android:color/white"
+    android:id="@+id/main"
+    tools:context=".MainActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/cameraPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessLeaf">
+
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_title_scanner_x"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/_15sdp">
+
+            <TextView
+                android:id="@+id/scan_qr_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_qr_code_zappele_repair"
+                app:layout_constraintTop_toTopOf="@id/ivFlashControl"
+                app:layout_constraintBottom_toBottomOf="@id/ivFlashControl"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:visibility="invisible"
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_500"
+                android:gravity="center"
+                android:hint="Select Username"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14.5sp"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/white"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.4dp"
+                app:spinner_item_height="46dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="#414141"
+                app:spinner_popup_elevation="14dp"
+                android:layout_marginTop="@dimen/_7sdp"
+                app:layout_constraintTop_toBottomOf="@id/scan_qr_title"
+                app:layout_constraintStart_toStartOf="@id/scan_qr_title"
+                app:layout_constraintEnd_toEndOf="@id/scan_qr_title"/>
+
+            <ProgressBar
+                android:id="@+id/load_username"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="true"
+                android:layout_marginTop="@dimen/_7sdp"
+                app:layout_constraintTop_toBottomOf="@id/scan_qr_title"
+                app:layout_constraintStart_toStartOf="@id/scan_qr_title"
+                app:layout_constraintEnd_toEndOf="@id/scan_qr_title"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/text_view_flash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ivFlashControl"
+                app:layout_constraintStart_toStartOf="@id/ivFlashControl"
+                app:layout_constraintEnd_toEndOf="@id/ivFlashControl"
+                android:text="@string/flash"
+                android:textSize="@dimen/_13sdp"
+                android:fontFamily="@font/bariol_bold"
+                android:textColor="@android:color/white"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFlashControl"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_margin="5dp"
+                android:padding="12dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_flash" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/scan_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/card_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:lottie_rawRes="@raw/scan_bg"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/scan_load_anim"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_450sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:lottie_rawRes="@raw/load_scan"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+        <TextView
+            android:id="@+id/text_load"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            tools:text="@string/validasi_lisensi"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:textSize="@dimen/_20sdp"
+            android:fontFamily="@font/bariol_bold"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_150sdp"
+            android:background="@drawable/badge_round_primary"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
